@@ -1,0 +1,43 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo:{
+typeName: 'Employee',
+typeNamePlural: 'Employees',
+title: {
+type: #STANDARD,
+value: 'Employee'}}
+
+}
+annotate entity ZC_EMPLOYEE_BR with
+{
+  @UI.facet: [{
+     id: 'Employee',
+     purpose: #STANDARD,
+     position: 10,
+     label: 'Employee',
+     type: #IDENTIFICATION_REFERENCE
+  }]
+  @UI:{ lineItem: [{position: 10,importance: #HIGH }],
+        identification: [{position: 10 }],
+        selectionField: [{position: 10 }] }
+  Employee;
+  @UI:{ lineItem: [{position: 20,importance: #HIGH }],
+        identification: [{position: 20 }],selectionField: [{position: 20 }] }
+  FirstName;
+
+  @UI:{ lineItem: [{position: 30,importance: #HIGH }],
+         identification: [{position: 30 }],selectionField: [{position: 30 }] }
+  LastName;
+
+  @UI:{ lineItem: [{position: 40,importance: #MEDIUM }],
+       identification: [{position: 40 }] }
+
+  Department;
+
+  @UI:{ lineItem: [{position: 41,importance: #MEDIUM }],
+     identification: [{position: 41 }] }
+  Location;
+
+  @UI:{ lineItem: [{position: 41,importance: #HIGH }],
+     identification: [{position: 41 }] }
+  Manager;
+}
